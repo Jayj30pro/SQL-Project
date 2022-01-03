@@ -130,7 +130,6 @@ WHERE dea.continent is not null
 ORDER BY 2,3;
 
 
--- Problem child
 SELECT dea.continent, dea.location, dea.date, dea.population,vac.new_vaccinations, 
 SUM(CONVERT(int, vac.new_vaccinations)) OVER (Partition by dea.location ORDER BY dea.location, dea.date)
 FROM PortfolioProject..CovidDeaths dea
